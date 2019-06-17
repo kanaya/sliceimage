@@ -2,6 +2,8 @@
 
 Image slicer.
 
+If you want to split an image into n equally-sized tiles, [image_slicer](https://pypi.org/project/image_slicer/) works better.
+
 ## Usage
 
 ```sh
