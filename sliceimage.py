@@ -27,23 +27,23 @@ ysize = int(args.ysize)
 
 im = Image.open(filename)
 w, h = im.size
-m = math.floor((w-xstart)/xstride)
-n = math.floor((h-ystart)/ystride)
-xarea = xoffset+xsize
-yarea = yoffset+ysize
-if (w-xstart) - m*xstride >= xarea:
+m = math.floor((w - xstart) / xstride)
+n = math.floor((h - ystart) / ystride)
+xarea = xoffset + xsize
+yarea = yoffset + ysize
+if (w - xstart) - m * xstride >= xarea:
 	m += 1
-if (h-ystart) - n*ystride >= yarea:
+if (h - ystart) - n * ystride >= yarea:
 	n += 1
 bn, ext = os.path.splitext(os.path.basename(filename))
 
 for y in range(n):
 	for x in range(m):
 		outfilename = '{}_{}_{}.png'.format(bn, x, y)
-		xbegin = xstart + x*xstride + xoffset
-		ybegin = ystart + y*ystride + yoffset
-		xend = xbegin+xsize
-		yend = ybegin+ysize
+		xbegin = xstart + x * xstride + xoffset
+		ybegin = ystart + y * ystride + yoffset
+		xend = xbegin + xsize
+		yend = ybegin + ysize
 		print('Cropping from ({}, {}) to ({}, {}) and writing to {}'.format(xbegin, ybegin, xend, yend, outfilename))
 		im.crop((xbegin, ybegin, xend, yend)).save(outfilename)
 
