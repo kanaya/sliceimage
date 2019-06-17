@@ -10,4 +10,4 @@ python sliceimage.py --xstart {xstart} --ystart {ystart} --xstride {xstride} --y
 
 ![Options](options.jpg)
 
-Note: Normally you don't need to set xoffset or yoffset.
+Note: Normally you don't need to set `xoffset` or `yoffset`.
